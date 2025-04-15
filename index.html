@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SDG KBC Quiz</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <audio id="timer-audio" src="tik-tik.mp3" preload="auto"></audio>
+
+<div id="welcome-screen">
+  <h1>Welcome to SDG KBC!</h1>
+  <p>Enter your Team Name to begin</p>
+  <input type="text" id="teamNameInput" placeholder="Enter Team Name" />
+  <button onclick="startGame()">Start Quiz</button>
+</div>
+
+<div id="quiz-container" class="hidden">
+  <div class="sidebar">
+    <h2>Team: <span id="team-name"></span></h2>
+    <h3>Score: <span id="score-display">0</span></h3>
+    <div id="lifelines">
+      <button onclick="use5050()" id="btn-5050">50-50</button>
+      <button onclick="useAudiencePoll()" id="btn-audience">Audience Poll</button>
+
+    </div>
+  </div>
+  <div id="audience-poll-box" class="hidden">
+    <h3>Live Audience Poll</h3>
+    <p>Please conduct the poll manually. Once ready, click below to continue.</p>
+    <button onclick="showAudiencePollResult()">Show Audience Poll Result</button>
+  </div>
+  
+  <div id="audience-result" class="hidden">
+    <p id="audience-text">Audience suggests Option B.</p>
+    <button onclick="resumeAfterAudiencePoll()">Resume Timer</button>
+  </div>
+  
+  <div class="main-quiz">
+    <div id="round-label">Round 1</div>
+    <div id="timer">Time Left: 30s</div>
+    <div id="question-box">
+      <div id="question">Question here</div>
+      <div id="options"></div>
+    </div>
+  </div>
+</div>
+<audio id="timer-audio" src="tik-tik.mp3" preload="auto"></audio>
+<div id="result" class="hidden">
+  <h2 id ="score-display">Quiz Completed!</h2>
+  <p>Final Score for <span id="final-team"></span>: <span id="final-score"></span></p>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
